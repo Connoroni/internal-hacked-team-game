@@ -1,0 +1,16 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+.h1 {
+  color: var(--color-teched-green);
+  font-size: 50px;
+  font-weight: 900;
+  height: 60px;
+}
+.p {
+  padding-left: 5px;
+  font-size: 12px;
+}
