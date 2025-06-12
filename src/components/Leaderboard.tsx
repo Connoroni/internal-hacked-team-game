@@ -13,14 +13,16 @@ export default function Leaderboard({
   //NEED TO LIMIT THE RESULTS BEFORE THEY COME THROUGH
   return (
     <div className={leaderboardStyles.leaderBoard}>
-      <h1>{title}</h1>
+      <h1 className={leaderboardStyles.h1}>{title}</h1>
       {displayPodium && <p>1st,2nd,3rd</p>}
-      <table>
+      <table className={leaderboardStyles.table}>
         <tbody>
           {results.map((result: Array<string | number>, i: number) => (
             <tr key={i} className={leaderboardStyles.rows}>
               {result.map((item: string | number, j: number) => (
-                <td key={"" + i + "" + j + ""}>{item}</td>
+                <td key={"" + i + "" + j + ""} className={leaderboardStyles.td}>
+                  {item}
+                </td>
               ))}
             </tr>
           ))}
