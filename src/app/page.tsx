@@ -1,4 +1,6 @@
+import ScoresForm from "@/components/ScoresForm";
 import Leaderboard from "@/components/Leaderboard";
+
 
 export default function HomePage() {
   return (
@@ -15,6 +17,7 @@ export default function HomePage() {
         ]}
         displayPodium
       />
+      <ScoresForm />
     </>
   );
 }
