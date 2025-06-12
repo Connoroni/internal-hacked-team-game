@@ -1,0 +1,31 @@
+.leaderBoard {
+  margin: auto;
+  max-width: 40%;
+  background-color: #5e1968;
+  border-radius: 10px;
+  padding: 20px;
+  h1 {
+    font-size: large;
+    margin: 0 auto;
+  }
+  table {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .rows {
+    height: 30px;
+    background-color: var(--color-teched-green);
+    width: 100%;
+  }
+  .rows:first-child {
+    background-color: var(--color-teched-yellow);
+  }
+  .rows:nth-child(2),
+  .rows:nth-child(3) {
+    background-color: var(--color-teched-blue);
+  }
+  td {
+    text-align: center;
+  }
+}
