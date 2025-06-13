@@ -1,20 +1,33 @@
 import Leaderboard from "@/components/Leaderboard";
+import { db } from "../utils/dbConnectionString.js";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const results = async () => {
+    const response = await db.query(
+      "SELECT user_name, SUM(score) as score  FROM scores LEFT JOIN users ON scores.user_id = users.id GROUP BY users.user_name ORDER BY score DESC limit 10 "
+    );
+    let data = await response.rows;
+    //data is an array of objects!!!!
+    data = data.map((data: { score?: number }, i: number) => {
+      return [i + 1, ...Object.values(data)];
+    });
+    return data;
+  };
+  const leaderBoardResults = await results();
+
   return (
     <>
       <h1>Home Page</h1>
-      <Leaderboard
-        title="Leaderboard"
-        results={[
-          ["1", "Bertie"],
-          ["2", "Manny"],
-          [3, "Connor"],
-          [4, "Akshat"],
-          [5, "Jaz"],
-        ]}
-        displayPodium
-      />
+      {leaderBoardResults ? (
+        <Leaderboard
+          title="LEADERBOARD"
+          results={leaderBoardResults}
+          limit={10}
+          displayPodium
+        />
+      ) : (
+        <div>This is undefined</div>
+      )}
     </>
   );
 }
