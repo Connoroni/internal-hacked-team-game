@@ -16,27 +16,23 @@ export default function Leaderboard({
   const resultsToPage = () => {
     const arr = [];
     for (let i = 0; i < limit; i++) {
-      results[i]
-        ? arr.push(
-            <tr key={i} className={leaderboardStyles.rows}>
-              {results[i].map((item: string | number, j: number) => (
-                <td key={"" + i + "" + j + ""} className={leaderboardStyles.td}>
-                  {item}
-                </td>
-              ))}
-            </tr>
-          )
-        : arr.push(
-            <tr key={i} className={leaderboardStyles.rows}>
-              <td
-                className={leaderboardStyles.td}
-                colSpan={`${results[0].length}`}
-              >
-                No data yet
-              </td>
-            </tr>
-          );
+      arr[i] = Array.isArray(results[i]) ? (
+        <tr key={i} className={leaderboardStyles.rows}>
+          {results[i].map((item: string | number, j: number) => (
+            <td key={"" + i + "" + j + ""} className={leaderboardStyles.td}>
+              {item}
+            </td>
+          ))}
+        </tr>
+      ) : (
+        <tr key={i} className={leaderboardStyles.rows}>
+          <td className={leaderboardStyles.td} colSpan={results[0].length}>
+            No data yet
+          </td>
+        </tr>
+      );
     }
+
     return arr;
   };
   //NEED TO LIMIT THE RESULTS BEFORE THEY COME THROUGH
