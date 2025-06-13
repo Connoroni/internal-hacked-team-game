@@ -27,7 +27,7 @@ export default function Leaderboard({
       ) : (
         <tr key={i} className={leaderboardStyles.rows}>
           <td className={leaderboardStyles.td} colSpan={results[0].length}>
-            No data yet
+            No data yet get playing
           </td>
         </tr>
       );
