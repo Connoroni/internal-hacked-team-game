@@ -1,13 +1,43 @@
+:root {
+  overflow-x: hidden;
+}
+
 .title {
   text-align: center;
   font-weight: bold;
   font-size: 2rem;
 }
 
+.top_box {
+  margin: 0;
+  display: flex;
+  justify-content: end;
+  background-color: var(--color-teched-yellow);
+  color: black;
+  padding: 2px 2px 0 0;
+  border-radius: 35% 35% 0 0;
+}
+
+.top_box_small {
+  width: 90vw;
+}
+.top_box_full {
+  width: 99vw;
+}
+
 /* looking at ways to get height to be responsive */
 .game_frame {
-  width: 95vw;
-  height: 95vh;
+  overflow-x: hidden;
+  margin-bottom: 1rem;
+}
+
+.frame_small {
+  width: 90vw;
+  height: 90vh;
+}
+.frame_full {
+  width: 100vw;
+  height: 100vh;
 }
 
 .bottomDiv {

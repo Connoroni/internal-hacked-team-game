@@ -2,6 +2,7 @@ import { db } from "@/utils/dbConnectionString";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import styles from "@/modules/games.module.css";
+import IFrame from "@/components/Iframe";
 
 type paramType = {
   params: Promise<{
@@ -26,11 +27,7 @@ export default async function GameIdPage({ params }: paramType) {
       <h1 className={styles.title}>{pageData.game_name}</h1>
       <section className={styles.bottomDiv}>
         {pageData.iframe ? (
-          <iframe
-            className={styles.game_frame}
-            src={pageData.game_url}
-            allowFullScreen
-          ></iframe>
+          <IFrame game_url={pageData.game_url} />
         ) : (
           <h2>
             Find the game here:
