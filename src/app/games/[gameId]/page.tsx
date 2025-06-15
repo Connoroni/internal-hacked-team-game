@@ -23,7 +23,7 @@ export default async function GameIdPage({ params }: paramType) {
   }
 
   return (
-    <>
+    <main className={styles.full_page}>
       <h1 className={styles.title}>{pageData.game_name}</h1>
       <section className={styles.bottomDiv}>
         {pageData.iframe ? (
@@ -39,6 +39,6 @@ export default async function GameIdPage({ params }: paramType) {
           <button className={styles.homeButton}>Go Home</button>
         </Link>
       </section>
-    </>
+    </main>
   );
 }
