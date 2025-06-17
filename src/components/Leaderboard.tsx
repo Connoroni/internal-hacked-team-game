@@ -1,5 +1,6 @@
 import { leaderBoardResultsType } from "@/types/leaderBoardType";
 import leaderboardStyles from "../modules/Leaderboard.module.css";
+import Podium from "./Podium";
 export default function Leaderboard({
   displayPodium = false,
   title,
@@ -39,7 +40,9 @@ export default function Leaderboard({
   return (
     <div className={leaderboardStyles.leaderBoard} style={minWidth}>
       <h1 className={leaderboardStyles.h1}>{title}</h1>
-      {displayPodium && <p>1st,2nd,3rd</p>}
+      {displayPodium && (
+        <Podium results={[results[0], results[1], results[2]]} />
+      )}
       <table className={leaderboardStyles.table}>
         <tbody>{resultsToPage()}</tbody>
       </table>
