@@ -12,7 +12,7 @@ export default function Leaderboard({
   results: leaderBoardResultsType;
   limit: number;
 }) {
-  const minWidth = { minWidth: `${title.length * 2.5}rem` };
+  console.log(results);
   //take an array of objects and loop through adding the contents of the object(array of arrays might be better) to the table row by row
   const resultsToPage = () => {
     const arr = [];
@@ -38,7 +38,7 @@ export default function Leaderboard({
   };
   //NEED TO LIMIT THE RESULTS BEFORE THEY COME THROUGH
   return (
-    <div className={leaderboardStyles.leaderBoard} style={minWidth}>
+    <div className={leaderboardStyles.leaderBoard}>
       <h1 className={leaderboardStyles.h1}>{title}</h1>
       {displayPodium && (
         <Podium results={[results[0], results[1], results[2]]} />
