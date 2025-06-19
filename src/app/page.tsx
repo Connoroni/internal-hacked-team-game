@@ -1,3 +1,4 @@
+import ScoresForm from "@/components/ScoresForm";
 import Leaderboard from "@/components/Leaderboard";
 import { db } from "../utils/dbConnectionString.js";
 
@@ -28,6 +29,7 @@ export default async function HomePage() {
       ) : (
         <div>This is undefined</div>
       )}
+      <ScoresForm />
     </>
   );
 }
