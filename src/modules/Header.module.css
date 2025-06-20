@@ -4,14 +4,13 @@
   align-items: center;
   padding: 30px;
 }
-.h1 {
-  color: var(--color-teched-green);
-  font-size: 50px;
-  font-weight: 900;
-  height: 60px;
+.gamEd {
+  position: relative;
 }
 .p {
-  padding-left: 5px;
+  position: absolute;
+  bottom: 5px;
+  padding-left: 84px;
   font-size: 12px;
 }
 
