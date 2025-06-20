@@ -1,0 +1,28 @@
+.dropdiv {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-teched-midnight);
+  position: relative;
+}
+
+.dropbutton {
+  width: 10vw;
+}
+
+.droplist {
+  display: none;
+  position: absolute;
+  background-color: var(--color-teched-midnight);
+}
+.dropdiv:hover .droplist {
+  display: flex;
+  flex-direction: column;
+  border: 1px white solid;
+}
+.dropdiv:hover .dropbutton {
+  background-color: var(--color-teched-green);
+}
+
+.dropitem:hover {
+  background-color: var(--color-teched-green);
+}

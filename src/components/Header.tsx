@@ -1,6 +1,7 @@
 import Image from "next/image";
 import headerStyles from "../modules/Header.module.css";
 import Link from "next/link";
+import GamesList from "./GamesList";
 
 export default function Header() {
   return (
@@ -14,6 +15,7 @@ export default function Header() {
         />
         <p className={headerStyles.p}>Created for Tech Educators</p>
       </Link>
+      <GamesList />
       <Link href="/">
         <Image
           src="/images/TE_GD_Logo_Negative_Green_Large_.png"

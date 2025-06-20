@@ -1,5 +1,6 @@
 .full_page {
   overflow-x: hidden;
+  overflow-y: visible;
 }
 
 .title {
