@@ -1,6 +1,7 @@
 import { db } from "@/utils/dbConnectionString.js";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import styles from "@/modules/create-profile.module.css";
 
 export default async function CreateProfile() {
   const clerkUser = await currentUser();
@@ -25,20 +26,36 @@ export default async function CreateProfile() {
   }
 
   return (
-    <>
-      <h1>Create Profile</h1>
-      <p>Enter your information in the form below</p>
+    <main className={styles.main}>
+      <h1 className={styles.title}>Create Profile</h1>
+      <p className={styles.small}>Enter your information in the form below</p>
       <form action={handleSubmit}>
-        <label htmlFor="user_name">Enter a Username</label>
-        <input type="text" name="user_name" id="user_name" required />
-        <label htmlFor="user_role">Select Your Role</label>
-        <select name="user_role" id="user_role">
-          <option value="Admin">Admin</option>
-          <option value="Delivery">Delivery</option>
-          <option value="Management">Management</option>
-        </select>
-        <button type="submit">Create Profile</button>
+        <div className={styles.content}>
+          <label htmlFor="user_name" className={styles.formlabel}>
+            Enter a Username
+          </label>
+          <input
+            type="text"
+            name="user_name"
+            id="user_name"
+            className={styles.formentry}
+            required
+          />
+          <label htmlFor="user_role" className={styles.formlabel}>
+            Select Your Role
+          </label>
+          <select name="user_role" id="user_role" className={styles.formentry}>
+            <option value="Admin">Admin</option>
+            <option value="Delivery">Delivery</option>
+            <option value="Management">Management</option>
+          </select>
+          <div className={styles.centre}>
+            <button type="submit" className={styles.createbutton}>
+              Create Profile
+            </button>
+          </div>
+        </div>
       </form>
-    </>
+    </main>
   );
 }

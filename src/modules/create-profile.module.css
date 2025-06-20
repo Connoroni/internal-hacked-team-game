@@ -1,0 +1,56 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 2.5vw;
+  font-weight: bold;
+}
+
+.small {
+  font-size: 1.5vw;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: start;
+  border: 10px var(--color-teched-yellow) solid;
+  border-radius: 25%;
+  width: 40vw;
+  min-width: 100px;
+  height: 60vh;
+  font-size: 1.5vw;
+}
+.formlabel {
+  margin-left: 5vw;
+}
+.formentry {
+  width: 75%;
+  background-color: var(--color-teched-sand);
+  color: black;
+  margin-left: 5vw;
+  border-radius: 10px;
+}
+.centre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.createbutton {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: var(--color-teched-blue);
+  padding: 2% 25%;
+  border-radius: 25px;
+  width: 5%;
+  font-size: 1.5vw;
+  height: fit-content;
+}
