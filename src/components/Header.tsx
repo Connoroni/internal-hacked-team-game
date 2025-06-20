@@ -19,7 +19,7 @@ export default function Header() {
           src="/images/TE_GD_Logo_Negative_Green_Large_.png"
           alt=""
           width={350}
-          height={350}
+          height={85}
         />
       </Link>
     </header>
